@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Car Manager</h1>
+    <form id="carForm">
+        <label for="brand">Brand:</label>
+        <input type="text" id="brand" name="brand" required>
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" required>
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year" required>
+        <label for="photo">Photo URL:</label>
+        <input type="text" id="photo" name="photo">
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" required>
+        <button type="submit">Add Car</button>
+    </form>
+    <div id="carList">
+    </div>
+
+    <script>
+        function Car(brand, model, year, photo, price) {
+            this.brand = brand;
+            this.model = model;
+            this.year = year;
+            this.photo = photo;
+            this.price = price;
+        }
+
+        let cars = [];
+
+        function addCar(brand, model, year, photo, price) {
+            if (brand && model && year && price) {
+                let car = new Car(brand, model, year, photo, price);
+                cars.push(car);
+                displayCars();
+            } else {
+                alert('Заполните всё позязя.');
+            }
+        }
+
+        function displayCars() {
+            let carList = document.getElementById('carList');
+            carList.innerHTML = '';
+            for (let i = 0; i < cars.length; i++) {
+                let car = cars[i];
+                let carDiv = document.createElement('div');
+                carDiv.innerHTML = `
+                    <img class="car-photo" src="${car.photo}" alt="${car.brand} ${car.model}">
+                    <h2>${car.brand} ${car.model}</h2>
+                    <p>Year: ${car.year}</p>
+                    <p>Price: $${car.price}</p>
+                    <button onclick="editCar(${i})">Edit</button>
+                    <button onclick="removeCar(${i})">Remove</button>
+                `;
+                carList.appendChild(carDiv);
+            }
+        }
+
+        function editCar(index) {
+            let car = cars[index];
+            document.getElementById('brand').value = car.brand;
+            document.getElementById('model').value = car.model;
+            document.getElementById('year').value = car.year;
+            document.getElementById('photo').value = car.photo;
+            document.getElementById('price').value = car.price;
+            removeCar(index);
+        }
+
+        function removeCar(index) {
+            cars.splice(index, 1);
+            displayCars();
+        }
+
+        document.getElementById('carForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let brand = document.getElementById('brand').value;
+            let model = document.getElementById('model').value;
+            let year = document.getElementById('year').value;
+            let photo = document.getElementById('photo').value;
+            let price = document.getElementById('price').value;
+            addCar(brand, model, year, photo, price);
+            this.reset();
+        });
+    </script>
+</body>
+</html>

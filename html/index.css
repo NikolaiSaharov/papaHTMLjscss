@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url('174059-the_crew-gamescom-noch-legkovyye_avtomobili-a_segmenta-3840x2160.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+}
+
+body, #carForm, #carList div, .car-item {
+    background-color: rgba(255, 255, 255, 0.7); 
+    color: white; 
+}
+
+#carForm input[type="text"],
+#carForm input[type="number"],
+#carList div,
+.car-item {
+    color: #666; 
+}
+
+#carForm button[type="submit"],
+#carList button,
+.car-item button {
+    color: white; 
+}
+
+#carList div,
+.car-item {
+    border-color: rgba(0, 0, 0, 0.1); 
+}
+
+#carList button,
+.car-item button {
+    background-color: rgba(92, 184, 92, 0.7); 
+}
+
+#carList button:hover,
+.car-item button:hover {
+    background-color: rgba(76, 174, 76, 0.7);
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+}
+
+#carForm {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#carForm label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+#carForm input[type="text"],
+#carForm input[type="number"] {
+    width: 92%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #666;
+    border-radius: 4px;
+}
+
+#carForm button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #5cb85c;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#carForm button[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+#carList {
+    width: 23%;
+    margin: 20px auto;
+}
+
+#carList div {
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#carList h2 {
+    margin-top: 0;
+}
+
+#carList p {
+    color: #666;
+}
+
+#carList button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+#carList button:hover {
+    background-color: #4cae4c;
+}
+
+.car-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.car-item img {
+    
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    object-fit: contain;
+}
+
+.car-item h2 {
+    margin-top: 0;
+}
+
+.car-item button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.car-item button:hover {
+    background-color: #4cae4c;
+}
+
+.car-photo {
+    max-width: 300px !important;
+    max-height: 200px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
